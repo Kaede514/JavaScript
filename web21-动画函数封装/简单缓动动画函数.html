@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<style>
+		div {
+			position: absolute;
+			top: 40px;
+			left: 0;
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+
+	<button>点击开始动画</button>
+	<div></div>
+	<script>
+		function animate(obj, target, fn) {
+			// 给不同的元素指定不同的定时器，节省内存空间
+			// 防止多次开辟内存空间，并且不容易引起歧义
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function () {
+				if (obj.offsetLeft === target) {
+					clearInterval(obj.timer);
+					//执行完定时器后回调
+					if (fn) fn();
+				} else {
+					var step = (target - obj.offsetLeft) / 10;
+					step = (step > 0) ? Math.ceil(step) : Math.floor(step);
+					obj.style.left = obj.offsetLeft + step + 'px';
+				}
+			}, 15);
+		}
+
+		var div = document.querySelector('div');
+		var btn = document.querySelector('button');
+		function fn() {
+			div.style.backgroundColor = '#409EFF';
+		};
+		btn.addEventListener('click', function () {
+			animate(div, 400, fn);
+		});
+	</script>
+
+</body>
+</html>

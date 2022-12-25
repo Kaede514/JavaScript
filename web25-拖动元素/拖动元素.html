@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+
+	<div style="width: 100px;height: 100px;background-color: pink;position: absolute;left: 0"></div>
+	<script>
+		var div = document.querySelector('div');
+		var startX = 0;
+		var startY = 0;
+		var x = 0;
+		var y = 0;
+		div.addEventListener('touchstart', function (e) {
+			startX = e.targetTouches[0].pageX;
+			startY = e.targetTouches[0].pageY;
+			x = this.offsetLeft;
+			y = this.offsetTop;
+		});
+		div.addEventListener('touchmove', function (e) {
+			var moveX = e.targetTouches[0].pageX - startX;
+			var moveY = e.targetTouches[0].pageY - startY;
+			this.style.left = x + moveX + 'px';
+			this.style.top = y + moveY + 'px';
+			// 手指移动也会触发滚动屏幕，所以要阻止默认的屏幕滚动
+			e.preventDefault();
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			padding: 100px;
+		}
+		textarea {
+			width: 200px;
+			height: 100px;
+			border: 1px solid pink;
+			outline: none;
+			resize: none;
+		}
+		ul {
+			margin-top: 50px;
+		}
+		li {
+			width: 300px;
+			padding: 5px;
+			background-color: rgb(245, 209, 243);
+			color: red;
+			font-size: 14px;
+			margin: 15px 0;
+		}
+	</style>
+</head>
+<body>
+
+	<textarea></textarea>
+	<button>发布</button>
+	<ul></ul>
+	<script>
+		var btn = document.querySelector('button');
+		var text = document.querySelector('textarea');
+		var ul = document.querySelector('ul');
+		btn.onclick = function () {
+			if (text.value === '') {
+				alert('未输入内容');
+				return false;
+			}
+			var li = document.createElement('li');
+			li.innerText = text.value;
+			ul.insertBefore(li, ul.firstElementChild);
+		}
+	</script>
+
+</body>
+</html>

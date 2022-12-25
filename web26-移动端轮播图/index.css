@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+}
+
+ul {
+    width: 500vw;
+    /* 清除浮动 */
+    overflow: hidden;
+    margin-left: -100vw;
+}
+
+ul li {
+    float: left;
+    width: 100vw;
+}
+
+ul li img {
+    width: 100%;
+}
+
+ol {
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+    list-style: none;
+}
+
+ol li {
+    display: inline-block;
+    width: 2vw;
+    height: 2vw;
+    border: 0.4vw solid rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+    margin-left: 1vw;
+}
+
+.current {
+    width: 6vw;
+    background-color: #fff;
+}

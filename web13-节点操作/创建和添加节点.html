@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+
+	<ul>
+		<li>li1</li>
+	</ul>
+	<script>
+		var li = document.createElement('li');
+		var li2 = document.createElement('li');
+		var ul = document.querySelector('ul');
+		ul.appendChild(li);
+		ul.insertBefore(li2, ul.firstElementChild);
+	</script>
+
+</body>
+</html>

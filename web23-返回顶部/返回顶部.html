@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<style>
+		.slider-bar {
+			position: absolute;
+			left: 50%;
+			top: 300px;
+			margin-left: 600px;
+			width: 45px;
+			height: 130px;
+			background-color: pink;
+		}
+		.w {
+			width: 1200px;
+			margin: 10px auto;
+		}
+		.header {
+			height: 150px;
+			background-color: #409EFF;
+		}
+		.banner {
+			height: 250px;
+			background-color: skyblue;
+		}
+		.main {
+			height: 1000px;
+			background-color: yellowgreen;
+		}
+		span {
+			display: none;
+			position: absolute;
+			bottom: 0;
+		}
+	</style>
+	<script src="./animate.js"></script>
+</head>
+<body>
+
+	<div class="slider-bar">
+		<span class="goBack">返回顶部</span>
+	</div>
+	<div class="header w">头部区域</div>
+	<div class="banner w">banner区域</div>
+	<div class="main w">主体部分</div>
+	<script>
+		var sliderBar = document.querySelector('.slider-bar');
+		var banner = document.querySelector('.banner');
+		var sliderTop = sliderBar.offsetTop - banner.offsetTop;
+		var main = document.querySelector('.main');
+		var goBack = document.querySelector('.goBack');
+		document.addEventListener('scroll', function () {
+			if (window.pageYOffset >= main.offsetTop) {
+				sliderBar.style.position = 'fixed';
+				sliderBar.style.top = sliderTop + 'px';
+				goBack.style.display = 'block';
+			} else if (window.pageYOffset >= banner.offsetTop) {
+				sliderBar.style.position = 'fixed';
+				sliderBar.style.top = sliderTop + 'px';
+				goBack.style.display = 'none';
+			} else {
+				sliderBar.style.position = 'absolute';
+				sliderBar.style.top = '300px';
+				goBack.style.display = 'none';
+			}
+		});
+		// 返回顶部模块
+		goBack.addEventListener('click', function () {
+			// window.scroll(0, 0);
+			animate(window, 0);
+		});
+	</script>
+
+</body>
+</html>

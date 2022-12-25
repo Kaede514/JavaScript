@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+
+	<span>text</span>
+	<img src="./image/angel.gif" alt="" style="position: absolute">
+	<script>
+		document.addEventListener('contextmenu', function (e) {
+			e.preventDefault();
+		});
+		document.addEventListener('selectstart', function (e) {
+			e.preventDefault();
+		});
+		document.addEventListener('click', function (e) {
+			console.log(e);
+			console.log(e.clientX);
+			console.log(e.clientY);
+			console.log(e.pageX);
+			console.log(e.pageY);
+			console.log(e.screenX);
+			console.log(e.screenY);
+		});
+		var img = document.querySelector('img');
+		document.addEventListener('mousemove', function (e) {
+			img.style.left = e.pageX + 'px';
+			img.style.top = e.pageY + 'px';
+		});
+	</script>
+
+</body>
+</html>

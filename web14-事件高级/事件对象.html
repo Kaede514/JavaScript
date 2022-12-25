@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+</head>
+<body>
+
+	<ul>
+		<li>li</li>
+	</ul>
+	<div style="width: 200px;height: 100px;background-color: pink;"><a href="#">go</a></div>
+	<script>
+		var ul = document.querySelector('ul');
+		ul.onclick = function (event) {
+			console.log(event);
+			// 返回触发事件的对象(元素)
+			console.log(event.target);
+			// 返回绑定事件的对象
+			console.log(this);
+		}
+		var div = document.querySelector('div');
+		div.onclick = function () {
+			alert('hello');
+		}
+		var a = document.querySelector('a');
+		a.onclick = function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+		}
+	</script>
+
+</body>
+</html>

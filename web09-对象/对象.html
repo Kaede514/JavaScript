@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		// 空对象
+		var obj1 = {};
+		console.log('obj1 = ' + obj1);
+		var obj2 = {
+			name: 'kaede',
+			age: 20,
+			sayHi: function () {
+				console.log('hi...');
+			}
+		};
+		console.log('obj2 = ' + obj2);
+		console.log('obj2.name = ' + obj2.name);
+		console.log("obj2['age'] = " + obj2['age']);
+		obj2.sayHi();
+		var obj3 = new Object();
+		console.log('obj3 = ' + obj3);
+		obj3.uname = 'kaede2';
+		obj3.sayHi = function () {
+			console.log('hi...');
+		}
+		console.log('obj3.uname = ' + obj3.uname);
+		obj3.sayHi();
+		function Cons(name) {
+			this.name = name,
+			this.gender = 'male',
+			this.sayHi = function () {
+				console.log('hi ' + name);
+			}
+		}
+		var obj4 = new Cons('kaede');
+		console.log('obj4 = ' + obj4);
+		console.log('obj4.name = ' + obj4.name);
+		obj4.sayHi();
+		// for in
+		for (var k in obj4) {
+			console.log(k + ' = ' + obj4[k]);
+		}
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

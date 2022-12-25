@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		function fun1(num1,num2) {
+			console.log('num = ' + (num1 + num2));
+			return;
+			console.log('after return');
+		}
+		function fun2(num) {
+			console.log('num = ' + num);
+			return num;
+		}
+		fun1(4,5);
+		fun1(4);
+		fun1(4,5,6);
+		var re = fun2(20);
+		console.log('re = ' + re);
+		function fun3() {
+			console.log(arguments);
+			console.log(arguments.length);
+			console.log(arguments[1]);
+		}
+		fun3(1,2,3);
+		var fun4 = function (str) {
+			console.log('str = ' + str);
+		}
+		fun4('call fun4');
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

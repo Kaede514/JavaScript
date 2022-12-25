@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<style>
+		.box {
+			width: 250px;
+			margin: 100px auto;
+		}
+		.box ul {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.box li {
+			list-style-type: none;
+			width: 24px;
+			height: 24px;
+			margin: 10px;
+			background: url(./image/sprite.png) no-repeat;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<script>
+		var lis = document.querySelectorAll('li');
+		for (var i = 0; i < lis.length; i++) {
+			lis[i].style.backgroundPosition = '0 -' + i*44 + 'px';
+		}
+	</script>
+
+</body>
+</html>

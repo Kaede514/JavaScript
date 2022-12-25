@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner {
+    position: relative;
+    margin: 40px auto;
+    width: 800px;
+    height: 450px;
+    background-color: pink;
+    overflow: hidden;
+}
+
+.banner > a {
+    display: none;
+    position: absolute;
+    top: 203px;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0.2);
+    background-image: url(../image/sprites.png);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.arrow-l {
+    left: 6px;
+    background-position: 15px -60px;
+}
+
+.arrow-r {
+    right: 6px;
+    background-position: -22px -60px;
+}
+
+ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    list-style: none;
+}
+
+ul li {
+    float: left;
+    height: 450px;
+}
+
+ul img {
+    width: 800px;
+}
+
+ol {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 360px;
+    bottom: 20px;
+    list-style: none;
+}
+
+ol li {
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+.current {
+    background-color: #fff;
+}

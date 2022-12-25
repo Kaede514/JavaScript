@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<style>
+		img {
+			width: 100%;
+		}
+		.swiper-container {
+			width: 800px;
+			height: 450px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: #fff;
+
+			/* Center slide text vertically */
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			-webkit-align-items: center;
+			align-items: center;
+		}
+	</style>
+	<link rel="stylesheet" href="./swiper-4.5.3/dist/css/swiper.min.css">
+	<script src="./swiper-4.5.3/dist/js/swiper.min.js"></script>
+</head>
+<body>
+
+	<!-- 注意不要更改结构和类名 -->
+	<!-- Swiper -->
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="../image/4.jpg" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../image/DESIRE.png" alt="">
+			</div>
+			<div class="swiper-slide">
+				<img src="../image/恋ひ恋ふ縁.png" alt="">
+			</div>
+		</div>
+		<!-- Add Pagination -->
+		<div class="swiper-pagination"></div>
+		<!-- Add Arrows -->
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+	</div>
+	<!-- Initialize Swiper -->
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			loop: true,
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+				hideOnClick: true,
+			},
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.wrapper {
+			width: 1400px;
+			margin: 50px auto;
+		}
+		.preview {
+			position: relative;
+		}
+		.preview > img {
+			width: 400px;
+			border: 1px solid #ccc;
+		}
+		.preview .mask {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 300px;
+			background-color: #FEDE4F;
+			opacity: 0.5;
+			cursor: move;
+		}
+		.preview .big {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 412px;
+			width: 500px;
+			height: 500px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+		}
+		.preview .big .bigImg {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="preview">
+			<img src="image/s3.png" alt="">
+			<div class="mask"></div>
+			<div class="big">
+				<img src="image/big.jpg" alt="" class="bigImg">
+			</div>
+		</div>
+	</div>
+	<script>
+		var preview = document.querySelector('.preview');
+		var mask = document.querySelector('.mask');
+		var big = document.querySelector('.big');
+		var img = document.querySelector('.preview > img');
+		var bigImg = document.querySelector('.bigImg');
+		// 遮挡层的显示和隐藏
+		preview.addEventListener('mouseover', function () {
+			mask.style.display = 'block';
+			big.style.display = 'block';
+		});
+		preview.addEventListener('mouseout', function () {
+			mask.style.display = 'none';
+			big.style.display = 'none';
+		});
+		// 遮挡层跟随鼠标
+		preview.addEventListener('mousemove', function (e) {
+			var x = e.pageX - this.offsetLeft;
+			var y = e.pageY - this.offsetTop;
+			var maskX = x - mask.offsetWidth/2;
+			var maskY = y - mask.offsetHeight/2;
+			var maskMax = img.offsetWidth-mask.offsetWidth;
+			if (maskX < 0) maskX = 0;
+			if (maskX > maskMax) maskX = maskMax;
+			if (maskY < 0) maskY = 0;
+			if (maskY > maskMax) maskY = maskMax;
+			mask.style.left = maskX + 'px';
+			mask.style.top = maskY + 'px';
+			// 移动遮挡层，大图片跟随
+			var bigMax = bigImg.offsetWidth - big.offsetWidth;
+			var bigX = maskX * bigMax / maskMax;
+			var bigY = maskY * bigMax / maskMax;
+			bigImg.style.left = -bigX + 'px';
+			bigImg.style.top = -bigY + 'px';
+		});
+	</script>
+
+</body>
+</html>
