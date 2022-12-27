@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<!-- 以前是用src引入文件 -->
+	<!-- <script src="./js/m1.js"></script> -->
+	<script src="./js/app.js" type="module"></script>
+</head>
+<body>
+
+	<script type="module">
+		// 1.通用的导入方式
+		// 引入m1.js模块内容
+		import * as m1 from	"./js/m1.js";
+		console.log(m1);
+		m1.hello();
+		// 引入m2.js模块内容
+		import * as m2 from "./js/m2.js";
+		console.log(m2);
+		m2.hi();
+		// 引入m3.js模块内容
+		import * as m3 from	"./js/m3.js";
+		console.log(m3);
+		m3.default.sayHi();
+		// 2.解构赋值形式
+		import {name, hello as h} from "./js/m1.js";
+		console.log(name);
+		h();
+		import {default as m4} from	"./js/m3.js";
+		console.log(m4);
+		// 3.简便形式，只能针对默认暴露
+		import m5 from "./js/m3.js";
+		console.log(m5);
+	</script>
+
+</body>
+</html>
