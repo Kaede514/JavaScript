@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		const s = new Set([1, 2, 3, 4, 3, 2]);
+		console.log('s.size = ' + s.size);
+		console.log(s);
+		// 可以利用Set来做数组去重
+		let arr = [...s];
+		console.log(arr);
+		s.clear();
+		s.add(5).add(6).add(7);
+		console.log(s.delete(6));;
+		console.log(s.has(6));;
+		console.log(s);
+		s.forEach(item => console.log(item));
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

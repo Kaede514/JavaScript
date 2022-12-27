@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		function Father(name, age) {
+			this.name = name;
+			this.age = age;
+		}
+		Father.prototype.sayHi = function () {
+			console.log('hi...')
+		};
+		function Son(name, age, score) {
+			Father.call(this, name, age);
+			this.score = score;
+		}
+		Son.prototype = new Father();
+		Son.prototype.constructor = Son;
+		Son.prototype.play = function () {
+			console.log('play...');
+		};
+		var son = new Son('kaede', 20, 80);
+		console.log(son);
+		son.sayHi();
+		console.log(Father.prototype);
+		console.log(Son.prototype);
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

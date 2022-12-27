@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		class Father {
+			constructor(x, y) {
+				this.x = x;
+				this.y = y;
+			}
+			money() {
+				console.log('money...');
+				console.log(this);
+			}
+			sum() {
+				console.log('x + y = ' + (this.x + this.y));
+			}
+			play() {
+				console.log('fanther play...');
+			}
+		}
+		class Son extends Father {
+			constructor(x, y) {
+				//必须放在构造器的第一行
+				super(x, y);
+			}
+			play() {
+				super.play();
+				console.log('son play...');
+			}
+		}
+		var son = new Son(2, 4);
+		son.money();
+		son.sum();
+		son.play();
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

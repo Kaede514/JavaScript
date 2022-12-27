@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		function Stu(name,age) {
+			// 实例成员
+			this.name = name;
+			this.age = age;
+			this.sayHi = function () {
+				console.log('hi...')
+			};
+		}
+		// 静态成员
+		Stu.height = 170;
+		var s1 = new Stu('s1', 20);
+		var s2 = new Stu('s2', 20);
+		console.log(s1.sayHi === s2.sayHi);
+		console.dir(Stu);
+		Stu.prototype.sayHello = function () {
+			console.log('hello...')
+		};
+		s1.sayHello();
+		console.log(s1.sayHello === s2.sayHello);
+		console.log(s1);
+		console.log(s1.__proto__ === Stu.prototype);
+		Stu.prototype = {
+			// 如果给原型对象赋值，则必须手动的利用constructor指回原来的构造函数
+			constructor: Stu,
+			name: 'kaede'
+		};
+		console.log(Stu.prototype.constructor);
+		console.log(Stu.prototype);
+		Object.prototype.sex = 'male';
+		console.log(s1.sex);
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

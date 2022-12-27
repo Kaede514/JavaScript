@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		var obj = {
+			id: 1,
+			name: 'kaede',
+			pet: {name: 'neko'},
+			arr: [1, 2, 3]
+		};
+		var o = {};
+		function deepCopy(target, source) {
+			for (var k in source) {
+				var item = source[k];
+				if (item instanceof Array) {
+					target[k] = [];
+					deepCopy(target[k], item);
+				} else if (item instanceof Object) {
+					target[k] = {};
+					deepCopy(target[k], item);
+				} else {
+					target[k] = item;
+				}
+			}
+		}
+		deepCopy(o, obj);
+		console.log(o);
+		console.log(o.pet === obj.pet);
+		console.log(o.arr === obj.arr);
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

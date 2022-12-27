@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		let age = 18;
+		let name = `template string, my age is ${age}`;
+		console.log(name);
+		let result = {
+			name: 'kaede',
+			age: 20,
+			sex: 'male'
+		}
+		let html = `
+			<div>
+				<span>${result.name}</span>
+				<span>${result.age}</span>
+			</div>
+		`;
+		console.log(html);
+		let hi = `hi, ${((name)=>{
+			console.log(name);
+			return name + ', good morning!'
+		})('kaede')}`;
+		console.log(hi);
+		let str = 'Hello world!';
+		console.log(str.startsWith('Hello'));
+		console.log(str.endsWith('!'));
+		console.log(str.repeat(3));
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

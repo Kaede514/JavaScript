@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="Keywords" content="">
+
+	<title>Title</title>
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<script>
+		const fn = (a, b) => a + b;
+		console.log(fn(2, 3));
+		const f = a => console.log('a = ' + a);
+		f(6);
+		const obj = {name: 'kaede'};
+		function fun() {
+			console.log(this);
+			return () => console.log(this);
+		};
+		const resFun = fun.call(obj);
+		resFun();
+		let o = {
+			age: 20,
+			// o对象不能产生作用域，所以该函数在全局作用域下
+			say: () => console.log(this)
+		}
+		o.say();
+	</script>
+</head>
+<body>
+
+
+
+</body>
+</html>
